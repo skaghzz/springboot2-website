@@ -1,7 +1,11 @@
 package com.skagh.springboot2website.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.skagh.springboot2website.domain.posts.Posts;
 import com.skagh.springboot2website.domain.posts.PostsRepository;
+import com.skagh.springboot2website.web.dto.PostsListResponseDto;
 import com.skagh.springboot2website.web.dto.PostsResponseDto;
 import com.skagh.springboot2website.web.dto.PostsSaveRequestDto;
 import com.skagh.springboot2website.web.dto.PostsUpdateRequestDto;
@@ -33,5 +37,13 @@ public class PostsService {
         Posts entity = postsRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
         return new PostsResponseDto(entity);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream()
+        .map(PostsListResponseDto::new)
+        .collect(Collectors.toList());
+        
     }
 }
