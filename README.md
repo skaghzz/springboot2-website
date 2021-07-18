@@ -51,3 +51,6 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 - JPA Auditing : Audit는 감독하고 검사하다는 뜻으로, 해당 데이터를 보고 있다가 생성 또는 수정이 발생하면 자동으로 값을 넣어주는 기능
 - @MappedSuperclass 는 enitiy가 해당 클래스를 상속할 경우 필드들도 column으로 인식하도록 함
 - @EntityListeners(AuditingEntityListener.class) 는 해당 클래스에 Auditing 기능을 포함 시킨다
+
+### chapter 4. 머스테치로 화면 구성하기
+- @Transactional 어노테이션에 readOnly = true 옵션을 주면 트랜잭션 범위는 유지하되 조회 기능만 남겨두기 때문에 속도가 빨라진다.
