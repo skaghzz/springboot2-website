@@ -54,3 +54,11 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 
 ### chapter 4. 머스테치로 화면 구성하기
 - @Transactional 어노테이션에 readOnly = true 옵션을 주면 트랜잭션 범위는 유지하되 조회 기능만 남겨두기 때문에 속도가 빨라진다.
+
+### chapter 5. 스프링 시큐리티와 OAuth2.0으로 로그인 기능 구현하기
+- scope를 profile, email로 지정한다. 기본값은 openid, profile, email 인데 open id provider가 아닌 서비스를 위해서 별도로 OAuth2Service를 만들어야한다.<br>
+하나의 OAuth2Service로 사용하기 위해서 일부러 openid scope를 빼고 등록한다.
+```PROPERTIES
+spring.security.oauth2.client.registration.google.scope=profile,email
+```
+- spring boot에서는 properties의 이름을 application-xxx.properties 로 만들면 xxx라는 이름의 profile이 생성되어 이를 통해 관리할 수 있다.
