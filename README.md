@@ -62,3 +62,5 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 spring.security.oauth2.client.registration.google.scope=profile,email
 ```
 - spring boot에서는 properties의 이름을 application-xxx.properties 로 만들면 xxx라는 이름의 profile이 생성되어 이를 통해 관리할 수 있다.
+- spring security에서는 권한 코드에 항상 ROLE_이 앞에 있어야 한다.
+- 세션 저장소로 톰캣, DB, 메모리 DB 가 있다.
