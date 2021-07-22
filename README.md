@@ -28,7 +28,7 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
 ```
 
 - spring web 계층
-- ![spring web layer](spirnb-web-layer.png)
+- ![spring web layer](spring-web-layer.png)
   - Web Layer
     - 외부 요청과 응답에 대한 전반적인 영역
     - 컨트롤러, JSP/Freemaker 등의 뷰 템플릿 영역
