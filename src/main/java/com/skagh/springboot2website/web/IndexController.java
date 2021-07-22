@@ -1,7 +1,5 @@
 package com.skagh.springboot2website.web;
 
-import javax.servlet.http.HttpSession;
-
 import com.skagh.springboot2website.config.auth.LoginUser;
 import com.skagh.springboot2website.config.auth.dto.SessionUser;
 import com.skagh.springboot2website.service.PostsService;
