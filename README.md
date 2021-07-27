@@ -64,3 +64,13 @@ spring.security.oauth2.client.registration.google.scope=profile,email
 - spring boot에서는 properties의 이름을 application-xxx.properties 로 만들면 xxx라는 이름의 profile이 생성되어 이를 통해 관리할 수 있다.
 - spring security에서는 권한 코드에 항상 ROLE_이 앞에 있어야 한다.
 - 세션 저장소로 톰캣, DB, 메모리 DB 가 있다.
+
+### chapter 6. AWS 서버 환경을 만들어 보자 - AWS EC2
+- [쉽게 EC2에 접속하는 방법](https://skagh.tistory.com/42)
+- [EC2 필수 초기 설정](https://skagh.tistory.com/43)
+
+### chapter 7. AWS에 데이터베이스 환경을 만들어보자 - AWS RDS
+- [Maria DB 문자 인코딩 utf8mb4 변경 방법](https://skagh.tistory.com/44)
+
+### chapter 8. EC2 서버에 프로젝트를 배포해보자
+- [EC2 메모리 부족인 경우 SWAP으로 메모리 추가 할당하기 - AWS](https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-memory-swap-file/)
