@@ -44,6 +44,6 @@ deploy:
 
     bundle_type: zip # 압축 확장자
     application: skagh-springboot2-webservice # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션
-    deployment_group: freelec-springboot2-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
+    deployment_group: skagh-springboot2-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
