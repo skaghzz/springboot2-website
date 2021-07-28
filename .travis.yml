@@ -19,3 +19,19 @@ notifications:
   email:
     recipients:
       skaghzz@naver.com
+
+berofe_deploy:
+  - zip -r skagh-springboot2-webservice *
+  - mkdir -p deploy
+  - mv skagh-springboot2-webservice.zip deploy/skagh-springboot2-webservice.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+    bucket: skagh-springboot-build # S3 버킷
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private # zip 파일 접근은 private으로
+    local_dir: deploy # before_deploy 에서 생성한 디렉토리
+    wait-until-deployed: true
