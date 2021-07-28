@@ -14,12 +14,6 @@ cache:
 
 script: "./gradlew clean build"
 
-# CI 실행 완료 시 메일로 알람
-notifications:
-  email:
-    recipients:
-      skaghzz@naver.com
-
 berofe_deploy:
   - zip -r skagh-springboot2-webservice *
   - mkdir -p deploy
@@ -35,7 +29,6 @@ deploy:
     acl: private # zip 파일 접근은 private으로
     local_dir: deploy # before_deploy 에서 생성한 디렉토리
     wait-until-deployed: true
-  
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
@@ -46,3 +39,9 @@ deploy:
     deployment_group: skagh-springboot2-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
+
+# CI 실행 완료 시 메일로 알람
+#notifications:
+#  email:
+#    recipients:
+#      skaghzz@naver.com
