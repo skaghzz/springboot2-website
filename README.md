@@ -74,3 +74,12 @@ spring.security.oauth2.client.registration.google.scope=profile,email
 
 ### chapter 8. EC2 서버에 프로젝트를 배포해보자
 - [EC2 메모리 부족인 경우 SWAP으로 메모리 추가 할당하기 - AWS](https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-memory-swap-file/)
+
+### chapter 9. Travis CI 배포 자동화
+- CI(Continuos Integration) : 개발된 코드를 테스트하여 배포파일을 생성하는 것을 자동화
+- CD(Continuos Deployment) : 생성된 배포파일을 운영 서버에 배포하는 것을 자동화
+- ![Travis-CI-연동시-구조](Travis-CI-연동시-구조.jpeg)
+- AWS S3에 배포파일을 보관하고 CodeDeploy로 배포하는 형태
+- S3, CodeDeploy를 이용하려면 IAM 서비스를 이용해야함
+- IAM의 역할은 AWS 서비스에, 사용자는 AWS 서비스 외에 사용할 수 있는 권한을 가짐
+- codeDeploy log는 /opt/codedeploy-agent/deployment-root에서 확인가능
