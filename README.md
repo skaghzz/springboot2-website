@@ -11,6 +11,8 @@
 - gradle4.x -> gradle-7.1.1
 - jdk8 -> jdk11
 - JUnit4 -> JUnit5
+- AWS
+  - Amazon Linux 1 -> Amazon Linux 2
 
 ## note
 ### chapter 3. 스프링 부트에서 JPA로 데이터베이스 다뤄보자
@@ -78,8 +80,27 @@ spring.security.oauth2.client.registration.google.scope=profile,email
 ### chapter 9. Travis CI 배포 자동화
 - CI(Continuos Integration) : 개발된 코드를 테스트하여 배포파일을 생성하는 것을 자동화
 - CD(Continuos Deployment) : 생성된 배포파일을 운영 서버에 배포하는 것을 자동화
-- ![Travis-CI-연동시-구조](Travis-CI-연동시-구조.jpeg)
+![Travis-CI-연동시-구조](Travis-CI-연동시-구조.jpeg)
 - AWS S3에 배포파일을 보관하고 CodeDeploy로 배포하는 형태
 - S3, CodeDeploy를 이용하려면 IAM 서비스를 이용해야함
 - IAM의 역할은 AWS 서비스에, 사용자는 AWS 서비스 외에 사용할 수 있는 권한을 가짐
 - codeDeploy log는 /opt/codedeploy-agent/deployment-root에서 확인가능
+
+### chapter 10. 24일 365일 중단 없는 서비스를 만들자
+![무중단 배포 전체 구조](무중단-배포-전체-구조.png)
+- NginX의 리버스 프록시 기능을 이용한다.
+- 리버스 프록시는 외부의 요청을 받아 백엔드 서버로 전달해주는 기능이다.
+- 백엔드 서버 2개 중 최신 배포 서버를 연결하여 무중단 배포를 가능케한다.
+- Amazon linux 2에서 nginx 설치 명령은 다음과 같다
+```
+sudo amazon-linux-extras install nginx1
+```
+- 배포할 경우 no main manifest attribute 문제가 발생할 수 있다.
+  - build 파일 중 *-plain.jar 를 서버에서 실행시켜서 발생하는 문제
+  - Spring Boot 2.5.0 부터 build하면 *-plain.jar 가 생성된다.
+  - plain을 빌드되지 않도록한다.
+  - plain archvies란?
+      - spring으로 만든 일반적인 실행가능한 jar 파일에는 dependency가 포함되어있어서 java -jar 로 실행가능하다.
+      - plain archvies는 이런 dependency가 없는 모듈의 class와 resource만 가지고 있는 jar이다.
+      - Spring Boot's Gradle plugin 문서에서 자세히 확인 가능하다.
+      - [document](https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/#packaging-executable.and-plain-archives)
