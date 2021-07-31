@@ -104,3 +104,18 @@ sudo amazon-linux-extras install nginx1
       - plain archvies는 이런 dependency가 없는 모듈의 class와 resource만 가지고 있는 jar이다.
       - Spring Boot's Gradle plugin 문서에서 자세히 확인 가능하다.
       - [document](https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/#packaging-executable.and-plain-archives)
+
+## 독후감
+- 하나의 웹 서비스를 처음부터 끝까지 경험해볼수 있는 책이다.
+- spring boot로 개발하는 내용을 배울 수 잇어서 좋았다.
+  - 개발할 때 폴더 구조는 다른 example을 보고 따라했는데 본 도서에서는 평소 알던 구조와는 다른 구조지만 그 이유를 말해줘서 좋았다.
+  - 스프링 시큐리티로 oauth2.0 로그인 구현을 배울 수 있어서 좋았다.
+- 배포 과정을 배울 수 있어서 좋았다.
+  - AWS의 EC2, S3, RDS, code-deploy 사용 방법을 배울 수 있어서 좋았다.
+- chapter11에 1인 개발을 위한 글은 가볍게 읽을 수 있지만 어느 챕터보다 중요한 글이라서 좋았다.
+- 책이 서비스 구축 과정을 처음부터(기획제외) 배포까지 전체적으로 다루다 보니 하나를 깊게 다루지 않는다.
+- 개발자라해도 서비스를 최초에 구축하는 과정을 경험하는 일이 많지않다. 그리고 책에서도 하나의 분야를 깊게 파지 이렇게 얕고 넓게 다루는 도서가 잘 없다.<br>실제 사용될 서비스를 구축한 것은 아니지만 책을 따라가면서 이런 느낌으로 현업에서도 웹서비스가 구축되고 활용되는구나 라는 인사이트를 얻을 수 있다.
+- 본 도서 저자가 출연하는 유투브 [개발바닥](https://www.youtube.com/channel/UCSEOUzkGNCT_29EU_vnBYjg/featured)에서 동영상을 함께 보면 개발자에 대한 마인드도 함께 배울 수 있다.
+  - 개발자로서의 자세와 같은 더 넓은 관점에서 좋은 정보를 얻을 수 있다.
+- 개발환경을 최신버전으로 적용하면서 발생하는 오류를 디버깅하면서 각 부분을 그냥 따라할때보단 깊게 이해할 수 있었다.
+### 웹서비스 구축 프로세스를 접해볼 수 있는 책 🔥🔥
